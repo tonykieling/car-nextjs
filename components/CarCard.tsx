@@ -4,6 +4,7 @@ import Image from "next/image";
 import CustomButton from "./CustomButton";
 import { calculateCarRent } from "@/app/utils";
 import { useState } from "react";
+import CardDetails from "./CardDetails";
 
 interface CarCardProps {
     car: CarProps
