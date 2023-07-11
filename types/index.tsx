@@ -11,6 +11,7 @@ export interface CustomButtonProps {
 }
 
 export interface SearchManufacturerProps {
+    // manufacturer: string,
     manufacturer: string,
     setManufacturer: (manufacturer: string )=> void;
 }
@@ -46,4 +47,9 @@ export interface OptionProps {
 export interface CustomFilterProps {
     title: string,
     options: OptionProps[]
+}
+
+export interface ShowMoreProps {
+    pageNumber: number,
+    isNext: boolean
 }

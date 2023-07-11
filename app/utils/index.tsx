@@ -1,5 +1,3 @@
-// import { headers } from "next/dist/client/components/headers";
-
 import { CarProps, FilterProps } from "@/types";
 
 export async function fetchCars(filters: FilterProps) {
@@ -8,17 +6,29 @@ export async function fetchCars(filters: FilterProps) {
     const options = {
       method: 'GET',
       url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
-      headers: {
-        'X-RapidAPI-Key': '84581c3d2amshdd59862577c893cp14200fjsn99f514301e73',
-        'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
-      }
+    //   headers:
+        // {
+        //     HeadersInit:
+                // {
+                //     'X-RapidAPI-Key': process.env.NEXT_PUBLIC_CAR_API_Key,
+                //     'X-RapidAPI-Host': process.env.NEXT_PUBLIC_CAR_API_Host
+                // }
+        // }
     };
+    const headers: HeadersInit = {
+        'X-RapidAPI-Key': process.env.NEXT_PUBLIC_CAR_API_Key || "",
+        'X-RapidAPI-Host': process.env.NEXT_PUBLIC_CAR_API_Host ||""
+    }
     
     try {
-        const response = await fetch(options.url, {headers: options.headers });
-        const result = await response.json();
-        // console.log("result:::::::: ", result.length);
-        return result;
+        // const response = await fetch(options.url, {headers: headers });
+        // const result = await response.json();
+        // console.log("result:::::::: ", result);
+        // return result;
+
+        console.log("TESTTTTTTTTTTTTTTTTT");
+        return "test";
+        // I already reached the limit of 3k requests for rapidapi
     } catch (error) {
         console.error(error);
     }
