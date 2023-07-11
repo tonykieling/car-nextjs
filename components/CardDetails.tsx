@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CarProps } from "@/types";
+import { generateCarImageUrl } from "@/app/utils";
 
 interface CarDetailsProps {
     isOpen: boolean;
@@ -39,7 +40,7 @@ const CardDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                                 leaveTo="opacity-100 scale-95"
                             >
                                 <Dialog.Panel
-                                    className="relative w-full max-w-lg max-h-[90vh] overflow-auto translate rounded-2xl bg-white text-left shadow-xl transition-all flex-col gap-5 p-6"
+                                    className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white text-left shadow-xl transition-all flex flex-col gap-5 p-6"
                                 >
                                     <button
                                         type="button"
@@ -59,7 +60,7 @@ const CardDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                                             className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg"
                                         >
                                             <Image
-                                                src="/hero.png"
+                                                src={generateCarImageUrl(car)}
                                                 className="object-contain"
                                                 fill
                                                 priority
@@ -69,7 +70,7 @@ const CardDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                                         <div className="flex gap-3">
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                                                 <Image
-                                                    src="/hero.png"
+                                                    src={generateCarImageUrl(car, "29")}
                                                     className="object-contain"
                                                     fill
                                                     priority
@@ -78,7 +79,7 @@ const CardDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                                             </div>
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                                                 <Image
-                                                    src="/hero.png"
+                                                    src={generateCarImageUrl(car, "33")}
                                                     className="object-contain"
                                                     fill
                                                     priority
@@ -87,7 +88,7 @@ const CardDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                                             </div>
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                                                 <Image
-                                                    src="/hero.png"
+                                                    src={generateCarImageUrl(car, "13")}
                                                     className="object-contain"
                                                     fill
                                                     priority
