@@ -1,1 +1,15 @@
 https://www.youtube.com/watch?v=pUNSHPyVryU&t=131s
+
+1. In order to have backend running, created app/api/test/route.tsx
+2. In order to consume that backend function, in the FE component:
+    const repos = await fetch("http://localhost:3000/api/test")
+3. The application was behaving weird, it turns out I discovered it was code in memory/cache.
+To solve that, I simply removed /.next
+* the cached code did not performed on Postman (it was working as expected). 
+  But in Chrome and Firefox, it was running the cached code.
+
+4. Route is been done by creating /app/test/page.tsx
+When browsing, type 'application-address'/test
+
+??? how to access the api internally withouth knowing its name/port???
+
