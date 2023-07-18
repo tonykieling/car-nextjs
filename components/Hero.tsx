@@ -3,15 +3,13 @@ import Image from "next/image";
 import CustomButton from "./CustomButton";
 
 function Hero() {
-    const handleScroll = () => {
-
-    }
-
+    const handleScroll = () => console.log("handleScrolll");
+// console.log("first- explore cars!!!!!!!!!!!!!!");
     return (
         <div className="hero">
             <div className="flex-1 pt-36 padding-x">
                 <h1 className="hero__title">
-                    Find, book, or rent a car!
+                    Find, book, or rent a car!1!
                 </h1>
                 <p className="hero__subtitle">
                     Streamline your car retal process with our effortless booking process.

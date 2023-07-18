@@ -12,4 +12,15 @@ To solve that, I simply removed /.next
 When browsing, type 'application-address'/test
 
 ??? how to access the api internally withouth knowing its name/port???
+? maybe there is something to do with /.next/types some file whithin this structure ?
+  some version of Next.js accepts a handler method which checks req.method to forward for the right one,
+  but in the current one it is needed to have the method to be exported as GET, POST, and so on.
+
+- It is possible to, instead of having an API to be used internally, it can be a regular JS function
+ which is exported and imported as usual. That function will call the external API.
+
+- Another way, at Brad's video on https://www.youtube.com/watch?v=mTz0GXj8NN0, he creates a function to check 
+whether it is production or development environment and set the path (http://localhost:3000 or https://yourdomain...) from there.
+This way is more statisc and would be hard to deal in a AWS env, for instance.
+
 

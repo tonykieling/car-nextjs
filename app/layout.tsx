@@ -6,11 +6,7 @@ export const metadata = {
   description: 'Car Hub Application',
 }
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <body className="relative" suppressHydrationWarning={true}>

@@ -1,6 +1,6 @@
 // this is the original page - Server Side Render
-// due to it (CSR), each time it is rendered, it goes to server and gets a new page,
-// meaning it will be displayed at the page's top
+// due to it (SSR), each time it is rendered, it goes to server and gets a new page,
+// meaning every search, loads a new page, which makes it to be displayed at the page's top
 // to fix that, it is needed to convert this page to CSR (Client Side Render), 
 // which needes to set/change props passed through components 
 
@@ -17,7 +17,7 @@ export default async function Home({ searchParams }: { searchParams: FilterProps
         limit: searchParams.limit || 10,
         model: searchParams.model || ""
     });
-    
+    console.log("allCars::::::::::::::: ", allCars)
     const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
     return (
